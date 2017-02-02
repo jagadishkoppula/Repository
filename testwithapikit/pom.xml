@@ -3,10 +3,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mycompany</groupId>
-	<artifactId>generalproject</artifactId>
+	<artifactId>testwithapikit</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>mule</packaging>
-	<name>Mule generalproject Application</name>
+	<name>Mule testwithapikit Application</name>
 
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -14,9 +14,7 @@
 
 		<mule.version>3.8.1</mule.version>
     	<mule.tools.version>1.2</mule.tools.version>
-	<munit.version>1.2.1</munit.version>
-    <mule.munit.support.version>3.8.0</mule.munit.support.version>
-    </properties>
+	</properties>
 
 	<build>
 		<plugins>
@@ -57,43 +55,16 @@
 								<resource>
 									<directory>mappings/</directory>
 								</resource>
-							</resources>
+							<resource>
+                                    <directory>src/main/api/</directory>
+                                </resource>
+                            </resources>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-		<plugin>
-                <groupId>com.mulesoft.munit.tools</groupId>
-                <artifactId>munit-maven-plugin</artifactId>
-                <version>${munit.version}</version>
-                <executions>
-                    <execution>
-                        <id>test</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <coverage>
-                        <runCoverage>true</runCoverage>
-                        <formats>
-                            <format>html</format>
-                        </formats>
-                    </coverage>
-                </configuration>
-            </plugin>
-        </plugins>
-	<testResources>
-            <testResource>
-                <directory>src/test/munit</directory>
-            </testResource>
-        <testResource>
-                <directory>src/test/resources</directory>
-            </testResource>
-        </testResources>
-    </build>
+		</plugins>
+	</build>
 
 	<!-- Mule Dependencies -->
 	<dependencies>
@@ -162,20 +133,7 @@
 			<version>${mule.version}</version>
 			<scope>test</scope>
 		</dependency>
-	<dependency>
-            <groupId>com.mulesoft.munit</groupId>
-            <artifactId>mule-munit-support</artifactId>
-            <version>${mule.munit.support.version}</version>
-            <scope>test</scope>
-        </dependency>
-    <dependency>
-            <groupId>com.mulesoft.munit</groupId>
-            <artifactId>munit-runner</artifactId>
-            <version>${munit.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-    </dependencies>
+	</dependencies>
 
 	<repositories>
           <repository>
