@@ -32,13 +32,15 @@
 		            <environment>Production</environment>
                    <!-- <copyToAppsDirectory>true</copyToAppsDirectory> --> 
 				</configuration>
-				<!-- <executions>
-					<execution>
-						<goals>
-							<goal>deploy</goal>
-						</goals>
-					</execution>
-				</executions>  -->
+						<executions>
+		            <execution>
+		                <id>deploy</id>
+		                <phase>deploy</phase>
+		                <goals>
+		                    <goal>deploy</goal>
+		                </goals>
+		            </execution>
+		        </executions>
 			</plugin>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
