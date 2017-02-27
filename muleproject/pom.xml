@@ -14,91 +14,18 @@
 
 		<mule.version>3.8.1</mule.version>
     	<mule.tools.version>1.2</mule.tools.version>
-
-			<cloudhub.username>jagadish95</cloudhub.username>
-			<cloudhub.password>J@gu1r1630</cloudhub.password>
-
 	</properties>
 
 	<build>
 		<plugins>
-		
-		<!-- new -->
-			<plugin>
-			  <groupId>org.mule.tools</groupId>
-			  <artifactId>muleesb-maven-plugin</artifactId>
-			  <version>1.0</version>
-			</plugin>
-		<plugin>
-                <groupId>org.mule.tools.maven</groupId>
-                <artifactId>mule-app-maven-plugin</artifactId>
-                <version>1.1</version>
-                <extensions>true</extensions>
-            </plugin>
-            <plugin>
-                <groupId>org.mule.tools.maven</groupId>
-                <artifactId>mule-maven-plugin</artifactId>
-                <version>2.0</version>
-                <configuration>
-                    <deploymentType>standalone</deploymentType>
-                    <muleVersion>3.8.1</muleVersion>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>deploy</id>
-                        <phase>pre-integration-test</phase>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>undeploy</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>undeploy</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>integration-test</id>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-		<!--  new -->
-		
-		
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-app-maven-plugin</artifactId>
 				<version>${mule.tools.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-		            <deploymentType>cloudhub</deploymentType>
-		            <muleVersion>3.8.1</muleVersion>
-		            <username>jagadish95</username>
-		            <password>J@gu1r1630</password>
-		            <redeploy>true</redeploy>
-		            <environment>Production</environment>
-                   <!-- <copyToAppsDirectory>true</copyToAppsDirectory> --> 
+                    <copyToAppsDirectory>true</copyToAppsDirectory>
 				</configuration>
-						<executions>
-		            <execution>
-		                <id>deploy</id>
-		                <phase>deploy</phase>
-		                <goals>
-		                    <goal>deploy</goal>
-		                </goals>
-		            </execution>
-		        </executions>
 			</plugin>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -139,19 +66,18 @@
 	<!-- Mule Dependencies -->
 	<dependencies>
 		<!-- Xml configuration -->
+				<!-- https://mvnrepository.com/artifact/org.mule/mule-core -->
+		<dependency>
+		    <groupId>org.mule</groupId>
+		    <artifactId>mule-core</artifactId>
+		    <version>3.8.1</version>
+		</dependency>
 		<dependency>
         	<groupId>com.mulesoft.muleesb</groupId>
 			<artifactId>mule-core-ee</artifactId>
 			<version>${mule.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.mule/mule-core -->
-		<dependency>
-		    <groupId>org.mule</groupId>
-		    <artifactId>mule-core</artifactId>
-		    <version>3.8.1</version>
-		</dependency>
-		
 		<!-- Xml configuration -->
 		<dependency>
 			<groupId>com.mulesoft.muleesb.modules</groupId>
@@ -237,14 +163,6 @@
             <url>http://repository.mulesoft.org/releases/</url>
             <layout>default</layout>
         </repository>
-        
-    <repository>
-        <id>mulesoft-snapshots</id>
-        <name>MuleSoft Snapshot Repository</name>
-        <url>http://repository.mulesoft.org/snapshots/</url>
-        <layout>default</layout>
-    </repository>
-        
     </repositories>
     <pluginRepositories>
         <pluginRepository>
@@ -256,13 +174,6 @@
                 <enabled>false</enabled>
             </snapshots>
         </pluginRepository>
-    <pluginRepository>
-        <id>mule-ee-public</id>
-        <url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
-        <snapshots>
-            <enabled>false</enabled>
-        </snapshots>
-    </pluginRepository>
-</pluginRepositories>
+    </pluginRepositories>
 
 </project>
