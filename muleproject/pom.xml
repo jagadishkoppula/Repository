@@ -75,7 +75,7 @@
 				<extensions>true</extensions>
 				<configuration>
 		            <deploymentType>cloudhub</deploymentType>
-		            <muleVersion>3.7.0</muleVersion>
+		            <muleVersion>3.8.1</muleVersion>
 		            <username>jagadish95</username>
 		            <password>J@gu1r1630</password>
 		            <redeploy>true</redeploy>
