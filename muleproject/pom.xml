@@ -24,8 +24,21 @@
 				<version>${mule.tools.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-                    <copyToAppsDirectory>true</copyToAppsDirectory>
+		            <deploymentType>cloudhub</deploymentType>
+		            <muleVersion>3.7.0</muleVersion>
+		            <username>jagadish95</username>
+		            <password>J@gu1r1630</password>
+		            <redeploy>true</redeploy>
+		            <environment>Production</environment>
+                   <!-- <copyToAppsDirectory>true</copyToAppsDirectory> --> 
 				</configuration>
+				<!-- <executions>
+					<execution>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>  -->
 			</plugin>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
