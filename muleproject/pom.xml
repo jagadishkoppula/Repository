@@ -20,7 +20,11 @@
 		<plugins>
 		
 		<!-- new -->
-		
+			<plugin>
+			  <groupId>org.mule.tools</groupId>
+			  <artifactId>muleesb-maven-plugin</artifactId>
+			  <version>1.0</version>
+			</plugin>
 		<plugin>
                 <groupId>org.mule.tools.maven</groupId>
                 <artifactId>mule-app-maven-plugin</artifactId>
@@ -241,6 +245,13 @@
                 <enabled>false</enabled>
             </snapshots>
         </pluginRepository>
-    </pluginRepositories>
+    <pluginRepository>
+        <id>mule-ee-public</id>
+        <url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+    </pluginRepository>
+</pluginRepositories>
 
 </project>
