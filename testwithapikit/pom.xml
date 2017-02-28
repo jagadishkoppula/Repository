@@ -207,11 +207,7 @@
             <version>${munit.version}</version>
             <scope>test</scope>
         </dependency>
-		<dependency>
-		    <groupId>org.mule.examples</groupId>
-		    <artifactId>testing-apikit-with-munit</artifactId>
-		    <version>1.4.0</version>
-		</dependency>
+		
     </dependencies>
 
 	<repositories>
