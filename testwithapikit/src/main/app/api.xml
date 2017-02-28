@@ -14,11 +14,11 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
         <http:listener config-ref="api-httpListenerConfig" path="/console/*" doc:name="HTTP"/>
         <apikit:console config-ref="api-config" doc:name="APIkit Console"/>
     </flow>
-    <flow name="get:/security:api-config">
-        <set-payload value="#[&quot;security&quot;]" doc:name="Set Payload"/>
+    <flow name="get:/second:api-config">
+        <set-payload value="#[&quot;second&quot;]" doc:name="Set Payload"/>
     </flow>
-    <flow name="get:/nosecurity:api-config">
-        <set-payload value="#[&quot;no security&quot;]" doc:name="Set Payload"/>
+    <flow name="get:/first:api-config">
+        <set-payload value="#[&quot;first&quot;]" doc:name="Set Payload"/>
     </flow>
     <apikit:mapping-exception-strategy name="api-apiKitGlobalExceptionMapping">
         <apikit:mapping statusCode="404">

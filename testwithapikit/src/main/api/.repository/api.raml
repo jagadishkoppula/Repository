@@ -1,27 +1,16 @@
 #%RAML 0.8
-title: simpleapi
+title: generaltest
 version: 1.0
-baseUri: http://testspring.cloudhub.io/api
-traits:
-  - client-id-required:
-      queryParameters:
-        client_id:
-          type: string
-          required: true
-        client_secret:
-          type: string
-          required: true
-/security:
-   get:
-      description: some payload
-      responses:
-       200:
-        body:
-         text/plain:
-/nosecurity:
-   get:
-      description: some payload
-      responses:
-       200:
-        body:
-         text/plain:
+baseUri: http://generalproject.cloudhub.io/api
+/first:
+  get:
+    responses: 
+      200:
+        body: 
+          text/plain:
+/second:
+  get:
+    responses: 
+      200:
+        body: 
+          text/plain:
