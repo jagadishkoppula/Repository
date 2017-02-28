@@ -29,6 +29,7 @@
 		        <username>jagadish95</username>
 		        <password>J@gadish95</password>
 		        <environment>Production</environment>
+		        <cores>0.1</cores>
 		    </configuration>
 		    <executions>
 		        <execution>
