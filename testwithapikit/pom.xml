@@ -16,6 +16,8 @@
     	<mule.tools.version>1.2</mule.tools.version>
 	<munit.version>1.2.1</munit.version>
     <mule.munit.support.version>3.8.0</mule.munit.support.version>
+    <mule.weave.version>3.8.1</mule.weave.version>
+    
     </properties>
 
 	<build>
@@ -144,6 +146,12 @@
 			<version>${mule.version}</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+         <groupId>com.mulesoft.weave</groupId>
+         <artifactId>mule-plugin-weave</artifactId>
+         <version>${mule.version}</version>
+         <scope>provided</scope>
+      </dependency>
 		<!-- Mule Transports -->
 		<dependency>
 			<groupId>org.mule.transports</groupId>
